@@ -1,4 +1,5 @@
 <template>
+  
   <div>
     <group id="example"  @click.native="greet">
       <cell title="title" value="value" ></cell>
