@@ -1,6 +1,6 @@
 <template>
   <div class="page-index">
-    <swiper :aspect-ratio="400/750" v-model="swiperItemIndex" style="height: 7rem" :dots-position="center">
+    <swiper :aspect-ratio="400/750" v-model="swiperItemIndex" style="height: 3.75rem" :dots-position="center">
       <swiper-item class="swiper-demo-img" v-for="(item, index) in demo04_list" :key="index">
         <img :src="item">
       </swiper-item>
@@ -42,9 +42,9 @@
 <script>
 import { Swiper, SwiperItem, Flexbox, FlexboxItem } from 'vux'
 const imgList = [
-  require("../../assets/img/1.jpeg"),
-  require("../../assets/img/2.jpg"),
-  require("../../assets/img/3.jpg")
+  require("../../assets/img/lunbo.jpg"),
+  require("../../assets/img/lunbo.jpg"),
+  require("../../assets/img/lunbo.jpg")
 ]
 export default {
   name: 'index',
@@ -107,7 +107,7 @@ export default {
 </script>
 <style scoped>
 .page-index {
-  width: 15.0rem;
+  width: 7.5rem;
   margin: 0 auto;
 }
 
@@ -122,21 +122,21 @@ export default {
 }
 
 .page-index .index-notice {
-  width: 15.0rem;
-  height: 2.0rem;
-  line-height: 2.0rem;
-  font-size: 0.56rem;
+  width: 7.5rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  font-size: 0.24rem;
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
 }
 
 .index-flexbox {
-  width: 15.0rem;
+  width: 7.5rem;
 }
 
 .flex-demo {
-  height: 3rem;
-  line-height: 3.0rem;
+  height: 1rem;
+  line-height: 1.0rem;
   text-align: center;
   box-sizing: border-box;
 }

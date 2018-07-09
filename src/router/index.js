@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Index from '../components/index/Index.vue'
 import List from '../components/index/List.vue'
 import Home from '../components/Home.vue'
-import Login from '../components/Login.vue'
+import Login from '../components/index/Login.vue'
 import IndexPage from '@/components/IndexPage'
 
 Vue.use(Router)
@@ -23,6 +23,9 @@ export default new Router({
         },{
         	path:'/list',
         	component:List
+        },{
+        	path: '/login',
+    			 component: Login
         }
       ]
     },
@@ -31,10 +34,6 @@ export default new Router({
     name: 'home',
     component: Home
   	},
-  	{
-    path: '/login',
-    name: 'login',
-    component: Login
-  	},
+  	
   ]
 })

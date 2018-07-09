@@ -14,9 +14,9 @@ export default {
 	data(){
 		return{
 			linkList:[
-				{link:'/',name:'shouye'},
-				{link:'/list',name:'second'},
-				{link:'/Login',name:'login'}
+				{link:'/',name:'首页'},
+				{link:'/list',name:'业务中心'},
+				{link:'/Login',name:'我的'}
 			]
 		}
 	}
@@ -27,16 +27,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #footerBar {
-  width: 15.0rem;
-  height: 1.0rem;
+  width: 7.5rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
   position: fixed;
   bottom: 0.0rem;
   z-index: 111;
 }
 
 #footerBar .list {
-  width: 15.0rem;
-  height: 1.0rem;
+  width: 7.5rem;
+  height: 0.8rem;
   display: flex;
 }
 
