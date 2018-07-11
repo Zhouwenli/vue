@@ -6,41 +6,50 @@
       </swiper-item>
     </swiper>
     <div class="index-notice">
-      五月最新优惠活动即将开始！
+        <img src="../../assets/img/index/noticeIcon.png"/>五月最新优惠活动即将开始！
     </div>
     <flexbox :gutter="0" wrap="wrap" class="index-flexbox">
       <flexbox-item :span="1/4">
-        <div class="flex-demo">1</div>
+        <img class="flexboxImg" src="../../assets/img/index/1.png"/>
+        <p class="flexboxla" >话费充值</p>
       </flexbox-item>
       <flexbox-item :span="1/4">
-        <div class="flex-demo">2</div>
+        <img class="flexboxImg"  src="../../assets/img/index/2.png"/>
+        <p class="flexboxla">在线客服</p>
       </flexbox-item>
       <flexbox-item :span="1/4">
-        <div class="flex-demo">3</div>
+        <img class="flexboxImg"  src="../../assets/img/index/3.png"/>
+        <p class="flexboxla" >语音/流量包</p>
       </flexbox-item>
       <flexbox-item :span="1/4">
-        <div class="flex-demo">4</div>
+        <img class="flexboxImg" src="../../assets/img/index/4.png"/>
+        <p class="flexboxla" >选号中心</p>
       </flexbox-item>
       <flexbox-item :span="1/4">
-        <div class="flex-demo">5</div>
+        <img class="flexboxImg"  src="../../assets/img/index/5.png"/>
+        <p class="flexboxla" >余量查询</p>
       </flexbox-item>
       <flexbox-item :span="1/4">
-        <div class="flex-demo">6</div>
+        <img class="flexboxImg"  src="../../assets/img/index/6.png"/>
+        <p class="flexboxla" >最新活动</p>
       </flexbox-item>
       <flexbox-item :span="1/4">
-        <div class="flex-demo">7</div>
+       <img  class="flexboxImg" src="../../assets/img/index/7.png"/>
+       <p class="flexboxla" >余额查询</p>
       </flexbox-item>
       <flexbox-item :span="1/4">
-        <div class="flex-demo">8</div>
+       <img class="flexboxImg" src="../../assets/img/index/8.png"/>
+       <p class="flexboxla" >实名认证</p>
       </flexbox-item>
     </flexbox>
     <ul>
       <li v-for="(item,i) in dataList" :key="i">{{item.name}}</li>
     </ul>
+    
   </div>
 </template>
 <script>
-import { Swiper, SwiperItem, Flexbox, FlexboxItem } from 'vux'
+import { Swiper, SwiperItem, Flexbox, FlexboxItem,Grid, GridItem, GroupTitle } from 'vux'
 const imgList = [
   require("../../assets/img/lunbo.jpg"),
   require("../../assets/img/lunbo.jpg"),
@@ -52,7 +61,15 @@ export default {
     Swiper,
     SwiperItem,
     Flexbox,
-    FlexboxItem
+    FlexboxItem,
+    Grid,
+    GridItem,
+    GroupTitle
+  },
+  methods: {
+    onItemClick () {
+      console.log('on item click')
+    }
   },
   data() {
     return {
@@ -128,17 +145,30 @@ export default {
   font-size: 0.24rem;
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
+  position: relative;
+}
+.page-index .index-notice img{
+	width:0.64rem;
+	height:0.27rem;
+  position: absolute;
+  left: 0.24rem;
+  top: 0.22rem;	
 }
 
 .index-flexbox {
   width: 7.5rem;
 }
-
-.flex-demo {
-  height: 1rem;
-  line-height: 1.0rem;
-  text-align: center;
-  box-sizing: border-box;
+.index-flexbox flexbox-item{
+	height: 1.5rem;
 }
+.flexboxImg{
+	width: 0.84rem;
+	display: block;
+	margin: 0.15rem auto;
+}
+.flexboxla{
+	text-align: center;
+}
+
 
 </style>

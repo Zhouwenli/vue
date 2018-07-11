@@ -1,49 +1,43 @@
 <template>
   <div class="page-index">
     <router-view/>
-    <div id="footerBar">
-      <ul class="list">
-        <router-link class="listItem" v-for="(item,i) in linkList" :key="i" :to="item.link">{{item.name}}</router-link>
-      </ul>
-    </div>
+     <tabbar>
+      <tabbar-item selected link="/">
+      	<img slot="icon" src="../assets/img/footerIcon/wxb.png">
+        <span class="" slot="label">首页</span>
+      </tabbar-item>
+      <tabbar-item link="/list">
+      	<img slot="icon" src="../assets/img/footerIcon/all.png">
+       <span  slot="label">业务中心</span>
+      </tabbar-item>
+      <tabbar-item  link="/Login" >
+      	<img slot="icon" src="../assets/img/footerIcon/account.png">
+        <span slot="label">我的</span>
+      </tabbar-item>
+     
+    </tabbar>
   </div>
 </template>
 <script>
+import { Tabbar, TabbarItem, Group, Cell } from 'vux'
+
 export default {
-	name:'indexPage',
-	data(){
-		return{
-			linkList:[
-				{link:'/',name:'首页'},
-				{link:'/list',name:'业务中心'},
-				{link:'/Login',name:'我的'}
-			]
-		}
-	}
-
+  components: {
+    Tabbar,
+    TabbarItem,
+    Group,
+    Cell
+  }
 }
-
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#footerBar {
-  width: 7.5rem;
-  height: 0.8rem;
-  line-height: 0.8rem;
-  position: fixed;
-  bottom: 0.0rem;
-  z-index: 111;
+tabbar{
+	position: fixed;
+	bottom: 0;
 }
 
-#footerBar .list {
-  width: 7.5rem;
-  height: 0.8rem;
-  display: flex;
-}
 
-#footerBar .list .listItem {
-  flex: 1;
-}
 
 
 
