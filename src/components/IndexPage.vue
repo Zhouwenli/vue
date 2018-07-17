@@ -32,11 +32,9 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-tabbar{
+.weui-tabbar{
 	position: fixed;
-	bottom: 0;
 }
-
 
 
 

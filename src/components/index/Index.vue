@@ -9,39 +9,27 @@
         <img src="../../assets/img/index/noticeIcon.png"/>五月最新优惠活动即将开始！
     </div>
     <flexbox :gutter="0" wrap="wrap" class="index-flexbox">
-      <flexbox-item :span="1/4">
-        <img class="flexboxImg" src="../../assets/img/index/1.png"/>
-        <p class="flexboxla" >话费充值</p>
+      <flexbox-item :span="1/4" v-for=" item in flexItem">
+        <img class="flexboxImg" v-bind:src="item.itemImg"/>
+        <p class="flexboxla" >{{item.itemname}}</p>
       </flexbox-item>
-      <flexbox-item :span="1/4">
-        <img class="flexboxImg"  src="../../assets/img/index/2.png"/>
-        <p class="flexboxla">在线客服</p>
-      </flexbox-item>
-      <flexbox-item :span="1/4">
-        <img class="flexboxImg"  src="../../assets/img/index/3.png"/>
-        <p class="flexboxla" >语音/流量包</p>
-      </flexbox-item>
-      <flexbox-item :span="1/4">
-        <img class="flexboxImg" src="../../assets/img/index/4.png"/>
-        <p class="flexboxla" >选号中心</p>
-      </flexbox-item>
-      <flexbox-item :span="1/4">
-        <img class="flexboxImg"  src="../../assets/img/index/5.png"/>
-        <p class="flexboxla" >余量查询</p>
-      </flexbox-item>
-      <flexbox-item :span="1/4">
-        <img class="flexboxImg"  src="../../assets/img/index/6.png"/>
-        <p class="flexboxla" >最新活动</p>
-      </flexbox-item>
-      <flexbox-item :span="1/4">
-       <img  class="flexboxImg" src="../../assets/img/index/7.png"/>
-       <p class="flexboxla" >余额查询</p>
-      </flexbox-item>
-      <flexbox-item :span="1/4">
-       <img class="flexboxImg" src="../../assets/img/index/8.png"/>
-       <p class="flexboxla" >实名认证</p>
-      </flexbox-item>
+      
     </flexbox>
+    <div class="newbars">
+    	<img src="../../assets/img/index/news1.jpg"/>
+    </div>
+    <div class="newproducts">
+    	<p class="productP"><img src="../../assets/img/index/productItem1.png"/></p>
+   		<div class="productItem">
+   			<div class="itemLeft">
+   				<img src="../../assets/img/index/news2.png"/>
+   			</div>
+   			<div class="itemRight">
+   				<img src="../../assets/img/index/news3.png"/>
+   				<img class="active" src="../../assets/img/index/news4.png"/>
+   			</div>
+   		</div>
+    </div>
     <ul>
       <li v-for="(item,i) in dataList" :key="i">{{item.name}}</li>
     </ul>
@@ -75,6 +63,16 @@ export default {
     return {
       demo04_list: imgList,
       swiperItemIndex: 1,
+      flexItem:[
+      	{itemname:'话费充值',itemImg: require("../../assets/img/index/1.png")},
+      	{itemname:'在线客服',itemImg: require("../../assets/img/index/2.png")},
+      	{itemname:'语音/流量包',itemImg: require("../../assets/img/index/3.png")},
+      	{itemname:'选号中心',itemImg: require("../../assets/img/index/4.png")},
+      	{itemname:'余量查询',itemImg: require("../../assets/img/index/5.png")},
+      	{itemname:'最新活动',itemImg: require("../../assets/img/index/6.png")},
+      	{itemname:'余额查询',itemImg: require("../../assets/img/index/7.png")},
+      	{itemname:'实名认证',itemImg: require("../../assets/img/index/8.png")}
+      ],
       center: 'center',
       dataList: [
         { name: 123 },
@@ -123,52 +121,6 @@ export default {
 
 </script>
 <style scoped>
-.page-index {
-  width: 7.5rem;
-  margin: 0 auto;
-}
-
-.swiper-demo-img {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-demo-img img {
-  width: 100%;
-  height: 100%;
-}
-
-.page-index .index-notice {
-  width: 7.5rem;
-  height: 0.7rem;
-  line-height: 0.7rem;
-  font-size: 0.24rem;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-  position: relative;
-}
-.page-index .index-notice img{
-	width:0.64rem;
-	height:0.27rem;
-  position: absolute;
-  left: 0.24rem;
-  top: 0.22rem;	
-}
-
-.index-flexbox {
-  width: 7.5rem;
-}
-.index-flexbox flexbox-item{
-	height: 1.5rem;
-}
-.flexboxImg{
-	width: 0.84rem;
-	display: block;
-	margin: 0.15rem auto;
-}
-.flexboxla{
-	text-align: center;
-}
-
+@import url("../../assets/css/index.css");
 
 </style>
