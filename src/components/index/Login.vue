@@ -8,17 +8,18 @@
 		</div>
 		<div class="loginmess">
 			<p class="loginp"><label for="">号码</label>
-				<input type="text" name="" id="" value="" placeholder="请输入银盛通信手机号码"  v-model="number" />
-				<img v-bind:class="number==''?'':'active'" v-on:click="clear" src="../../assets/img/login/clear.png"/>
+				<input type="text"  placeholder="请输入银盛通信手机号码"  v-model="number" />
+				<img v-bind:class="number==''?'':'active'" @click="clear('number')"  src="../../assets/img/login/clear.png"/>
 			</p>
 			<p class="loginp"><label for="">密码</label>
-				<input type="text" name="" id="" value="" placeholder="请输入服务密码" v-model="password"/>
+				<input type="password"  placeholder="请输入服务密码" v-model="password"/>
 				<img  class="padingLeft" src="../../assets/img/login/nosee.png"/>
-				<img src="../../assets/img/login/clear.png"/></p>
+				<img v-bind:class="password==''?'':'active'"  @click="clear('password')" src="../../assets/img/login/clear.png"/></p>
 		</div>
-		<div class="loginIn">
+		<div class="loginIn" @click="login">
 			登录
 		</div>
+		
 	</div>
 
 </template>
@@ -32,12 +33,17 @@
 			}
 		},
 		methods:{
-			clear(){
-				console.log(this.number)
-				this.number='';
-				console.log("1111111111")
+			clear:function(type){
+				this[type]='';
+			},
+			login:function(){
+				this.$http.get("../../assets/data/login.json").then(function(responce){
+							console.log(responce)
+					},function(err){
+						console.log("请求失败！")
+					})
+
 			}
-			
 		}
 	}
 </script>
