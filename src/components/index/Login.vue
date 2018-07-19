@@ -37,11 +37,20 @@
 				this[type]='';
 			},
 			login:function(){
-				this.$http.get("../../assets/data/login.json").then(function(responce){
-							console.log(responce)
-					},function(err){
-						console.log("请求失败！")
-					})
+				this.$http.get("static/login.json").then(function(responce){
+						console.log(responce)
+						console.log(responce.body.status)
+				    if(responce.body.status==200){
+				    	console.log(responce.body.number)
+				    	if(responce.body.number==this.number && responce.body.password==this.password){
+				    		alert("登录成功")
+				    	}else{
+				    		alert("登录失败")
+				    	}
+				    }
+				},function(err){
+					console.log("请求失败！")
+				})
 
 			}
 		}
