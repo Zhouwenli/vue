@@ -25,3 +25,6 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+2018/7/17  图片在循环的时候报404，就需要加上require
+参考网址 https://www.cnblogs.com/crazycode2/p/8689992.html
