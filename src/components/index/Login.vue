@@ -12,8 +12,8 @@
 				<img v-bind:class="number==''?'':'active'" @click="clear('number')"  src="../../assets/img/login/clear.png"/>
 			</p>
 			<p class="loginp"><label for="">密码</label>
-				<input type="password"  placeholder="请输入服务密码" v-model="password"/>
-				<img  class="padingLeft" src="../../assets/img/login/nosee.png"/>
+				<input :type="type"   placeholder="请输入服务密码" v-model="password"/>
+				<img v-bind:class="password==''?'':'active'" @click="see()" class="padingLeft" :src="src"/>
 				<img v-bind:class="password==''?'':'active'"  @click="clear('password')" src="../../assets/img/login/clear.png"/></p>
 		</div>
 		<div class="loginIn" @click="login">
@@ -29,12 +29,23 @@
 		data(){
 			return{
 				number:'',
-				password:''
+				password:'',
+				type:'password',
+				src:require("../../assets/img/login/nosee.png")
 			}
 		},
 		methods:{
 			clear:function(type){
 				this[type]='';
+			},
+			see:function(){
+				if(this.type=="password"){
+					this.type="text";
+					this.src=require("../../assets/img/login/see.png");
+				}else{
+					this.type="password";
+					this.src=require("../../assets/img/login/nosee.png");
+				}
 			},
 			login:function(){
 				this.$http.get("static/login.json").then(function(responce){
@@ -43,7 +54,7 @@
 				    if(responce.body.status==200){
 				    	console.log(responce.body.number)
 				    	if(responce.body.number==this.number && responce.body.password==this.password){
-				    		alert("登录成功")
+				    		this.$router.push('/')
 				    	}else{
 				    		alert("登录失败")
 				    	}

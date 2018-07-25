@@ -9,7 +9,7 @@
         <img src="../../assets/img/index/noticeIcon.png"/>五月最新优惠活动即将开始！
     </div>
     <flexbox :gutter="0" wrap="wrap" class="index-flexbox">
-      <flexbox-item :span="1/4" v-for=" item in flexItem">
+      <flexbox-item :span="1/4" v-for=" (item,i) in flexItem" :key="i">
         <img class="flexboxImg" v-bind:src="item.itemImg"/>
         <p class="flexboxla" >{{item.itemname}}</p>
       </flexbox-item>
