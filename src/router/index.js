@@ -5,6 +5,7 @@ import List from '../components/index/List.vue'
 import Home from '../components/Home.vue'
 import Login from '../components/index/Login.vue'
 import IndexPage from '@/components/IndexPage'
+import Seacher from '@/components/list/Seacher.vue'
 
 Vue.use(Router)
 
@@ -22,7 +23,13 @@ export default new Router({
           component: Index
         },{
         	path:'/list',
-        	component:List
+        	component:List,
+        	children:[
+        	   {
+        	   		path:'/seacher',
+        	   		component:Seacher
+        	   }
+        	]
         },{
         	path: '/login',
     			 component: Login
